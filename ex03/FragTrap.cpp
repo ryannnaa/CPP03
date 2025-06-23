@@ -38,8 +38,12 @@ FragTrap::~FragTrap()
 
 void FragTrap::attack(const std::string& target)
 {
+    if (!getHp() || !getEp())
+        return ;
+    setEp(getEp() - 1);
     std::cout << "FragTrap " << this->getName() << " attacks " << target
-        << ", causing " << this->getAd() << " points of damage!!" << std::endl;
+        << ", causing " << this->getAd() << " points of damage!!" << std::endl
+        << "Remaining energy points: " << this->getEp() << std::endl;
 }
 
 void FragTrap::highFivesGuys()

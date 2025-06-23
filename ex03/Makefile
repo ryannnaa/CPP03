@@ -1,9 +1,9 @@
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
-NAME := FragTrap
+NAME := DiamondTrap
 
-SRCS := main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp
+SRCS := main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp DiamondTrap.cpp
 OBJS := ${SRCS:.cpp=.o}
 DEPS := ${OBJS:.o=.d}
 

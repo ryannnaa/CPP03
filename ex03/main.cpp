@@ -1,38 +1,34 @@
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 #include <iostream>
 
 int main()
 {
-    FragTrap a;
-    std::cout << std::endl << "[ FragTrap a ]" << std::endl << a.getName() << " has " << a.getHp() << " hit points left" 
-        << std::endl << a.getName() << " has " << a.getEp() << " energy points left" << std::endl
-        << a.getName() << " has " << a.getAd() << " attack damage" << std::endl << std::endl;
-    
-    FragTrap b("Beta");
-    std::cout << std::endl << "[ FragTrap b ]" << std::endl << b.getName() << " has " << b.getHp() << " hit points left" 
-        <<std::endl << b.getName() << " has " << b.getEp() << " energy points left" << std::endl
-        << b.getName() << " has " << b.getAd() << " attack damage" << std::endl << std::endl;
-    
-    a.attack("Beta");
-    std::cout << std::endl;
+    std::cout << "[ Default DiamondTrap ]" << std::endl;
+    DiamondTrap a;
 
-    b.takeDamage(30);
-    std::cout << std::endl;
+    std::cout << std::endl << "[ Named DiamondTrap ]" << std::endl;
+    DiamondTrap b("Beta");
 
-    FragTrap c(b);
-    std::cout << std::endl;
+    std::cout << std::endl << "[ Who Am I ]" << std::endl;
+    a.whoAmI();
+    b.whoAmI();
 
-    b.beRepaired(15);
-    std::cout << std::endl;
-
-    std::cout << "FragTrap b: " << b.getName() << " has " << b.getHp() << " hit points left" << std::endl;
-    std::cout << "FragTrap c: " << c.getName() << " has " << c.getHp() << " hit points left" << std::endl;
-    std::cout << std::endl;
-
+    std::cout << std::endl << "[ Hi-Five ]" << std::endl;
     a.highFivesGuys();
     b.highFivesGuys();
-    c.highFivesGuys();
-    std::cout << std::endl;
 
+    std::cout << std::endl << "[ Attack ]" << std::endl;
+    a.attack("Beta");
+
+    std::cout << std::endl << "[ Take Damage ]" << std::endl;
+    b.takeDamage(a.getAd());
+
+    std::cout << std::endl << "[ Repair ]" << std::endl;
+    b.beRepaired(10);
+
+    std::cout << std::endl << "[ Guard Gate ]" << std::endl;
+    b.guardGate();
+
+    std::cout << std::endl;
     return (0);
 }
