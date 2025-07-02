@@ -2,7 +2,7 @@
 #include <iostream>
 
 ClapTrap::ClapTrap()
-    : name("No Name"), hp(10), ep(10), ad(0)
+    : name("NoName"), hp(10), ep(10), ad(0)
 {
     std::cout << "ClapTrap " << name << " has been constructed" << std::endl;
 }
@@ -87,6 +87,7 @@ void ClapTrap::attack(const std::string& target)
 {
     if (!hp || !ep)
         return ;
+    ep -= 1;
     std::cout << "ClapTrap " << name << " attacks " << target
         << ", causing " << ad << " points of damage!" << std::endl
         << "Remaining energy points: " << ep << std::endl;
@@ -106,6 +107,7 @@ void ClapTrap::beRepaired(unsigned int amount)
     if (!hp || !ep)
         return ;
     hp += amount;
+    ep -= 1;
     std::cout << "ClapTrap " << name << " has been repaired for " << amount << " points of health!" << std::endl
         << "Remaining energy points: " << ep << std::endl << "Total health points: " << hp << std::endl;
 }
