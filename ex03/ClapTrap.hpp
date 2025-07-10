@@ -5,32 +5,33 @@
 
 class ClapTrap
 {
-private:
+protected:
     std::string name;
     unsigned int hp;
     unsigned int ep;
     unsigned int ad;
+
+    ClapTrap(const std::string& input, unsigned int hp, unsigned int ep, unsigned int ad);
+    
+    void setName(const std::string& input);
+    void setHp(const unsigned int amount);
+    void setEp(const unsigned int amount);
+    void setAd(const unsigned int amount);
 public:
     ClapTrap();
-    ClapTrap(const std::string& name);
-    ClapTrap(const std::string& name, unsigned int hp, unsigned int ep, unsigned int ad);
+    ClapTrap(const std::string& input);
     ClapTrap(const ClapTrap& other);
     ClapTrap& operator=(const ClapTrap& other);
-    ~ClapTrap();
+    virtual ~ClapTrap();
 
     const std::string& getName() const;
     unsigned int getHp() const;
     unsigned int getEp() const;
     unsigned int getAd() const;
 
-    void setName(const std::string& name);
-    void setHp(const unsigned int amount);
-    void setEp(const unsigned int amount);
-    void setAd(const unsigned int amount);
-    
-    void attack(const std::string& target);
-    void takeDamage(const unsigned int amount);
-    void beRepaired(const unsigned int amount);
+    virtual void attack(const std::string& target);
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
 };
 
 #endif

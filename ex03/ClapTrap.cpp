@@ -7,14 +7,14 @@ ClapTrap::ClapTrap()
     std::cout << "ClapTrap " << name << " has been constructed" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string& name)
-    : name(name), hp(10), ep(10), ad(0)
+ClapTrap::ClapTrap(const std::string& input)
+    : name(input), hp(10), ep(10), ad(0)
 {
     std::cout << "ClapTrap " << name << " has been constructed" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string& name, unsigned int hp, unsigned int ep, unsigned int ad)
-    : name(name), hp(hp), ep(ep), ad(ad)
+ClapTrap::ClapTrap(const std::string& input, unsigned int hp, unsigned int ep, unsigned int ad)
+    : name(input), hp(hp), ep(ep), ad(ad)
 {
     std::cout << "ClapTrap " << name << " has been constructed" << std::endl;
 }
@@ -63,9 +63,9 @@ unsigned int ClapTrap::getAd() const
     return (ad);
 }
 
-void ClapTrap::setName(const std::string& name)
+void ClapTrap::setName(const std::string& input)
 {
-    this->name = name;
+    this->name = input;
 }
 
 void ClapTrap::setHp(const unsigned int amount)
