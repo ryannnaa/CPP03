@@ -13,12 +13,6 @@ ClapTrap::ClapTrap(const std::string& name)
     std::cout << "ClapTrap " << name << " has been constructed" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string& name, unsigned int hp, unsigned int ep, unsigned int ad)
-    : name(name), hp(hp), ep(ep), ad(ad)
-{
-    std::cout << "ClapTrap " << name << " has been constructed" << std::endl;
-}
-
 ClapTrap::ClapTrap(const ClapTrap& other)
     : name(other.name), hp(other.hp), ep(other.ep), ad(other.ad)
 {
