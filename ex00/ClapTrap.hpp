@@ -11,13 +11,13 @@ private:
     unsigned int ep;
     unsigned int ad;
 protected:
-    void setName(const std::string& name);
+    void setName(const std::string& input);
     void setHp(const unsigned int amount);
     void setEp(const unsigned int amount);
     void setAd(const unsigned int amount);
 public:
     ClapTrap();
-    ClapTrap(const std::string& name);
+    ClapTrap(const std::string& input);
     ClapTrap(const ClapTrap& other);
     ClapTrap& operator=(const ClapTrap& other);
     ~ClapTrap();
